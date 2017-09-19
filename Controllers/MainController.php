@@ -9,18 +9,15 @@ require_once 'IController.php';
 class MainController implements IController
 {
 
-    private $slug;
-
-//    public function __construct($slug)
-//    {
-//        $this->slug = $slug;
-//    }
-
     public function response()
     {
-
+        $articles = new ArticlesRelation();
+        $arts = $articles->getArticles();
         include_once 'Views/header.php';
         include_once 'Views/main.php';
         include_once 'Views/footer.php';
+
+
     }
+
 }

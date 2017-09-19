@@ -8,8 +8,13 @@
  */
 class VodoyomController
 {
+    const TYPE ='lake';
     public function response()
     {
+
+        $articles = new ArticlesRelation();
+        $lakes = $articles->getArticlesWhere(self::TYPE);
+
         include_once 'Views/header.php';
         include_once 'Views/vodo.php';
         include_once 'Views/footer.php';
